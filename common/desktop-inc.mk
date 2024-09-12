@@ -14,3 +14,6 @@
 #
 
 # Configurations common to Trusty builds for Android Desktop.
+
+TRUSTY_BUILTIN_USER_TASKS += \
+    trusty/user/desktop/app/gsc_tunnel/app \

@@ -16,5 +16,6 @@
 KERNEL_32BIT := false
 DEBUG := 1
 
+include ../../../arm/generic-arm64/project/generic-arm-virt-inc.mk
 include ../../../arm/generic-arm64/project/generic-arm-inc.mk
 include ../../common/desktop-inc.mk

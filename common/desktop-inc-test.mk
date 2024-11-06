@@ -19,6 +19,6 @@ include ../../common/desktop-inc.mk
 
 TRUSTY_RUST_USER_TESTS += \
 	trusty/user/app/keymint \
-	trusty/user/desktop/app/gsc_tunnel \
+	trusty/user/desktop/lib/boot_params \
 
 TEST_BUILD := true

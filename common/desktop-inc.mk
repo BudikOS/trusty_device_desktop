@@ -21,7 +21,7 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/app/storage \
 	trusty/user/base/app/apploader \
 	trusty/user/base/app/system_state_server_static \
-	trusty/user/desktop/app/gsc_tunnel/app \
+	trusty/user/desktop/app/gsc_svc/app \
 
 # TODO(359377657): Until we have real applications that leverage the GSC, use
 # sample services with fake implementations. Having these applications available

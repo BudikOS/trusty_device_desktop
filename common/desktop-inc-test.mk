@@ -20,5 +20,6 @@ include ../../common/desktop-inc.mk
 TRUSTY_RUST_USER_TESTS += \
 	trusty/user/app/keymint \
 	trusty/user/desktop/lib/boot_params \
+	trusty/user/desktop/app/finger_guard \
 
 TEST_BUILD := true

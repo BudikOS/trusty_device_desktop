@@ -21,5 +21,8 @@ KERNEL_BTI_ENABLED ?= true
 # D-cache lines are 64 bytes on QEMU arm64
 GLOBAL_DEFINES += CACHE_LINE=64
 
+MODULES += \
+       trusty/kernel/platform/desktop/arm64/rust \
+
 include ../../../arm/generic-arm64/project/debugging-inc.mk
 include ../../../arm/generic-arm64/project/qemu-inc.mk

@@ -18,6 +18,9 @@ DEBUG := 2
 
 RELEASE_BUILD ?= false
 
+MODULES += \
+       trusty/kernel/platform/desktop/arm64/rust \
+
 include ../../../arm/generic-arm64/project/debugging-inc.mk
 include ../../../arm/generic-arm64/project/generic-arm-inc.mk
 include ../../common/desktop-inc-test.mk

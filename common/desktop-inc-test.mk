@@ -21,5 +21,6 @@ TRUSTY_RUST_USER_TESTS += \
 	trusty/user/app/keymint \
 	trusty/user/desktop/lib/boot_params \
 	trusty/user/desktop/app/finger_guard \
+	trusty/user/desktop/app/gsc_svc \
 
 TEST_BUILD := true

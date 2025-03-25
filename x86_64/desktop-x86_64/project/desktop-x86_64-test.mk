@@ -15,5 +15,8 @@
 
 RELEASE_BUILD ?= false
 
+MODULES += \
+       trusty/kernel/platform/desktop/x86_64/rust \
+
 include ../../../x86/generic-x86_64/project/generic-x86_64-inc.mk
 include ../../common/desktop-inc-test.mk

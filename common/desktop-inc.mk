@@ -19,21 +19,21 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/app/gatekeeper \
 	trusty/user/app/keymint/app \
 	trusty/user/app/storage \
-	trusty/user/base/app/apploader \
 	trusty/user/base/app/system_state_server_static \
 	trusty/user/desktop/app/gsc_svc/app \
 	trusty/user/desktop/app/pinweaver/app \
 	trusty/user/desktop/app/finger_guard/app \
+	trusty/user/desktop/app/hwbcc \
+	trusty/user/desktop/app/hwkey/rust \
 
 # TODO(359377657): Until we have real applications that leverage the GSC, use
 # sample services with fake implementations. Having these applications available
 # enables the Desktop image to pass the KeyMint unit tests and boot the OS. This
 # useful for development.
 TRUSTY_BUILTIN_USER_TASKS += \
-	trusty/user/app/sample/hwbcc \
 	trusty/user/app/sample/hwcrypto \
 
 WITH_FAKE_HWRNG ?= true
-WITH_FAKE_HWKEY ?= true
+WITH_FAKE_HWKEY ?= false
 WITH_FAKE_KEYBOX ?= true
 # Remove lines above once real services exist.

@@ -25,6 +25,9 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/desktop/app/pinweaver/app \
 	trusty/user/desktop/app/finger_guard/app \
 
+# Desktop specific keymint access policy.
+TRUSTY_KM_RUST_ACCESS_POLICY := trusty/user/desktop/lib/keymint_access_policy
+
 # TODO(359377657): Until we have real applications that leverage the GSC, use
 # sample services with fake implementations. Having these applications available
 # enables the Desktop image to pass the KeyMint unit tests and boot the OS. This

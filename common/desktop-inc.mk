@@ -29,6 +29,13 @@ TRUSTY_BUILTIN_USER_TASKS := \
 # Desktop specific keymint access policy.
 TRUSTY_KM_RUST_ACCESS_POLICY := trusty/user/desktop/lib/keymint_access_policy
 
+# TODO(359377657): Enable these flags
+# Configure the storage application to use external super block mac support
+# provided by the GSC.
+# STORAGE_HAS_RPMB := false
+# STORAGE_HAS_FS_TDP := true
+# STORAGE_EXTERNAL_SUPER_BLOCK_MAC := trusty/user/desktop/lib/external_super_block_mac
+
 # TODO(359377657): Until we have real applications that leverage the GSC, use
 # sample services with fake implementations. Having these applications available
 # enables the Desktop image to pass the KeyMint unit tests and boot the OS. This

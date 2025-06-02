@@ -22,5 +22,6 @@ TRUSTY_RUST_USER_TESTS += \
 	trusty/user/desktop/lib/boot_params \
 	trusty/user/desktop/app/finger_guard \
 	trusty/user/desktop/app/gsc_svc \
+	trusty/user/desktop/app/pinweaver \
 
 TEST_BUILD := true

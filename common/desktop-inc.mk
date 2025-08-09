@@ -16,14 +16,15 @@
 # Configurations common to Trusty builds for Android Desktop.
 
 TRUSTY_BUILTIN_USER_TASKS := \
+	trusty/user/app/authmgr/authmgr-fe/app \
 	trusty/user/app/gatekeeper \
 	trusty/user/app/keymint/app \
+	trusty/user/app/keymint/vm/commservice/app \
 	trusty/user/app/storage \
 	trusty/user/base/app/system_state_server_static \
 	trusty/user/desktop/app/gsc_svc/app \
 	trusty/user/desktop/app/pinweaver/app \
 	trusty/user/desktop/app/finger_guard/app \
-	trusty/user/desktop/app/hwbcc \
 	trusty/user/desktop/app/hwkey/rust \
 
 # Desktop specific keymint access policy.
@@ -47,3 +48,16 @@ WITH_FAKE_HWRNG ?= true
 WITH_FAKE_HWKEY ?= false
 WITH_FAKE_KEYBOX ?= true
 # Remove lines above once real services exist.
+
+STORAGE_HAS_FS_TDP := true
+STORAGE_USE_EARLY_TDP := true
+SECURE_STORAGE_USE_TDP := true
+GATEKEEPER_STORAGE_PORT := STORAGE_CLIENT_TDP_PORT
+USE_SYSTEM_BINDER := true
+TRUSTY_VM_INCLUDE_KEYMINT ?= true
+TRUSTY_VM_INCLUDE_GATEKEEPER ?= true
+
+# Temporarily disable the Authmgr to allow KeyMint to use the ISecureStorage
+# Trusted HAL directly, which is currently blocked by Authmgr.
+# TODO(b/433897522): Remove this once ISecureStorage handover is implemented.
+AUTHMGRFE_MODE_INSECURE ?= true

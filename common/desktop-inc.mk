@@ -26,6 +26,7 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/desktop/app/pinweaver/app \
 	trusty/user/desktop/app/finger_guard/app \
 	trusty/user/desktop/app/hwkey/rust \
+	trusty/user/desktop/app/weaver/app \
 
 # Desktop specific keymint access policy.
 TRUSTY_KM_RUST_ACCESS_POLICY := trusty/user/desktop/lib/keymint_access_policy

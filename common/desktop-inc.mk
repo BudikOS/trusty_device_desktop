@@ -57,3 +57,5 @@ TRUSTY_VM_INCLUDE_GATEKEEPER ?= true
 # Trusted HAL directly, which is currently blocked by Authmgr.
 # TODO(b/433897522): Remove this once ISecureStorage handover is implemented.
 AUTHMGRFE_MODE_INSECURE ?= true
+
+GATEKEEPER_MANIFEST := trusty/user/app/gatekeeper/manifest-desktop.json

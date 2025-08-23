@@ -31,9 +31,14 @@ TRUSTY_BUILTIN_USER_TASKS := \
 # Desktop specific keymint access policy.
 TRUSTY_KM_RUST_ACCESS_POLICY := trusty/user/desktop/lib/keymint_access_policy
 
-STORAGE_EXTERNAL_SUPER_BLOCK_MAC := trusty/user/desktop/lib/external_super_block_mac
+# TODO(359377657): Enable these flags
+# Configure the storage application to use external super block mac support
+# provided by the GSC.
+# STORAGE_HAS_RPMB := false
+# STORAGE_HAS_FS_TDP := true
+# STORAGE_EXTERNAL_SUPER_BLOCK_MAC := trusty/user/desktop/lib/external_super_block_mac
+
 STORAGE_HAS_FS_TDP := true
-STORAGE_HAS_RPMB := false
 STORAGE_USE_EARLY_TDP := true
 SECURE_STORAGE_USE_TDP := true
 GATEKEEPER_STORAGE_PORT := STORAGE_CLIENT_TDP_PORT

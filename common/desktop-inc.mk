@@ -31,18 +31,6 @@ TRUSTY_BUILTIN_USER_TASKS := \
 # Desktop specific keymint access policy.
 TRUSTY_KM_RUST_ACCESS_POLICY := trusty/user/desktop/lib/keymint_access_policy
 
-# TODO(359377657): Until we have real applications that leverage the GSC, use
-# sample services with fake implementations. Having these applications available
-# enables the Desktop image to pass the KeyMint unit tests and boot the OS. This
-# useful for development.
-TRUSTY_BUILTIN_USER_TASKS += \
-	trusty/user/app/sample/hwcrypto \
-
-WITH_FAKE_HWRNG ?= true
-WITH_FAKE_HWKEY ?= false
-WITH_FAKE_KEYBOX ?= true
-# Remove lines above once real services exist.
-
 STORAGE_EXTERNAL_SUPER_BLOCK_MAC := trusty/user/desktop/lib/external_super_block_mac
 STORAGE_HAS_FS_TDP := true
 STORAGE_HAS_RPMB := false

@@ -24,5 +24,12 @@ GLOBAL_DEFINES += CACHE_LINE=64
 MODULES += \
        trusty/kernel/platform/desktop/arm64/rust \
 
+DEBUG := 2
+BUILTIN_BCC := true
+STORAGE_EXTERNAL_SUPER_BLOCK_MAC := trusty/user/desktop/lib/external_super_block_mac
+STORAGE_HAS_RPMB := false
+TI50_EMULATOR_PATH := $(abspath out/host/linux-x86/etc/ti50_emulator_x86_64/run.sh)
+TRUSTY_VM_INCLUDE_AUTHMGR := false
+
 include ../../../arm/generic-arm64/project/debugging-inc.mk
 include ../../../arm/generic-arm64/project/qemu-inc.mk

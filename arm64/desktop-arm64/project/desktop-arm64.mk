@@ -19,6 +19,9 @@ DEBUG := 1
 MODULES += \
        trusty/kernel/platform/desktop/arm64/rust \
 
+STORAGE_HAS_RPMB := false
+STORAGE_EXTERNAL_SUPER_BLOCK_MAC := trusty/user/desktop/lib/external_super_block_mac
+
 include ../../../arm/generic-arm64/project/generic-arm-virt-inc.mk
 include ../../../arm/generic-arm64/project/generic-arm-inc.mk
 include ../../common/desktop-inc.mk

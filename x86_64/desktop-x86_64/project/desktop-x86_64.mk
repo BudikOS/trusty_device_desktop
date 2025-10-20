@@ -16,5 +16,8 @@
 MODULES += \
        trusty/kernel/platform/desktop/x86_64/rust \
 
+STORAGE_HAS_RPMB := false
+STORAGE_EXTERNAL_SUPER_BLOCK_MAC := trusty/user/desktop/lib/external_super_block_mac
+
 include ../../../x86/generic-x86_64/project/generic-x86_64-inc.mk
 include ../../common/desktop-inc.mk

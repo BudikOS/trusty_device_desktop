@@ -24,7 +24,7 @@ avb_add_hash_footer {
     name: "desktop_trusty_signed_bin",
     filename: "desktop_trusty_signed.bin",
     partition_name: "boot",
-    private_key: ":desktop_trusty_sign_key",
+    private_key: ":desktop_trusty_sign_test_key",
     salt: desktop_trusty_vm_salt,
     rollback_index: DESKTOP_TRUSTY_VM_VERSION,
     props: [
@@ -55,7 +55,7 @@ avb_add_hash_footer {
     name: "desktop_trusty_ext_boot_signed_bin",
     filename: "desktop_trusty_ext_boot_signed.bin",
     partition_name: "boot",
-    private_key: ":desktop_trusty_sign_key",
+    private_key: ":desktop_trusty_sign_test_key",
     salt: desktop_trusty_vm_salt,
     rollback_index: DESKTOP_TRUSTY_VM_VERSION,
     props: [
@@ -82,9 +82,27 @@ avb_add_hash_footer {
     },
 }
 
+filegroup {
+    name: "desktop_trusty_sign_test_key",
+    srcs: [":avb_testkey_rsa4096"],
+}
+
+cc_defaults {
+    name: "desktop_trusty_kernel_digest_target.defaults",
+    enabled: false,
+    target: {
+        android_arm64: {
+            enabled: true,
+        },
+        android_x86_64: {
+            enabled: true,
+        },
+    },
+}
+
 cc_genrule {
     name: "desktop_trusty_kernel_digest",
-    defaults: ["desktop_trusty_kernel_digest.defaults"],
+    defaults: ["desktop_trusty_kernel_digest_target.defaults"],
     out: ["desktop_trusty.kernelhash"],
     srcs: [":desktop_trusty_signed_bin"],
     tools: ["avbtool"],
@@ -94,7 +112,7 @@ cc_genrule {
 
 cc_genrule {
     name: "desktop_trusty_ext_boot_kernel_digest",
-    defaults: ["desktop_trusty_kernel_digest.defaults"],
+    defaults: ["desktop_trusty_kernel_digest_target.defaults"],
     out: ["desktop_trusty_ext_boot.kernelhash"],
     srcs: [":desktop_trusty_ext_boot_signed_bin"],
     tools: ["avbtool"],

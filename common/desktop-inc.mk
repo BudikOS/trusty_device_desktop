@@ -25,6 +25,7 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/desktop/app/gsc_svc/app \
 	trusty/user/desktop/app/hwbcc \
 	trusty/user/desktop/app/hwkey/rust \
+	trusty/user/desktop/app/keymint_provisioning/app \
 	trusty/user/desktop/app/keymint_strongbox/app \
 	trusty/user/desktop/app/pinweaver/app \
 	trusty/user/desktop/app/weaver/app \

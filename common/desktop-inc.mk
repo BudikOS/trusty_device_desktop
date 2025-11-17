@@ -25,6 +25,7 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/desktop/app/gsc_svc/app \
 	trusty/user/desktop/app/hwbcc \
 	trusty/user/desktop/app/hwkey/rust \
+	trusty/user/desktop/app/keymint_provisioning/app \
 	trusty/user/desktop/app/keymint_strongbox/app \
 	trusty/user/desktop/app/pinweaver/app \
 	trusty/user/desktop/app/weaver/app \
@@ -42,5 +43,7 @@ TRUSTY_VM_INCLUDE_KEYMINT ?= true
 TRUSTY_VM_INCLUDE_GATEKEEPER ?= true
 TRUSTY_VM_ENABLE_KEYMINT_PROVISIONING ?= true
 TRUSTY_VM_INCLUDE_FINGERGUARD ?= true
+KEYMINT_PROVISIONING_VIA_HAL := true
+UDS_USE_CHROMEOS_SIGNER_NAME := true
 
 GATEKEEPER_MANIFEST := trusty/user/app/gatekeeper/manifest-desktop.json

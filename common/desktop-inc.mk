@@ -28,6 +28,7 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/desktop/app/keymint_provisioning/app \
 	trusty/user/desktop/app/keymint_strongbox/app \
 	trusty/user/desktop/app/pinweaver/app \
+	trusty/user/desktop/app/vm_rkp/app \
 	trusty/user/desktop/app/weaver/app \
 
 ifeq (true,$(call TOBOOL,$(STORAGE_ENABLE_ERROR_REPORTING)))
@@ -52,5 +53,7 @@ UDS_USE_CHROMEOS_SIGNER_NAME := true
 KEYMINT_DESKTOP_TRUSTY := true
 TRUSTY_VM_INCLUDE_RKP_TA ?= true
 KEYMINT_LATE_PROVISIONING := true
+AVF_ENABLE_ADVANCE_MULTITENANCY := true
+AVF_VALIDATE_CLIENT_VM_USING_DICE_INFO := true
 
 GATEKEEPER_MANIFEST := trusty/user/app/gatekeeper/manifest-desktop.json

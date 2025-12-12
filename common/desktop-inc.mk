@@ -30,6 +30,10 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/desktop/app/pinweaver/app \
 	trusty/user/desktop/app/weaver/app \
 
+ifeq (true,$(call TOBOOL,$(STORAGE_ENABLE_ERROR_REPORTING)))
+TRUSTY_BUILTIN_USER_TASKS += trusty/user/base/app/metrics
+endif
+
 # Desktop specific keymint access policy.
 TRUSTY_KM_RUST_ACCESS_POLICY := trusty/user/desktop/lib/keymint_access_policy
 

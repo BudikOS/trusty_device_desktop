@@ -25,7 +25,15 @@ MODULES += \
        trusty/kernel/platform/desktop/arm64/rust \
 
 DEBUG := 2
+# TODO(b/473893047) Fix the devicetree and the bootparams module to remove the
+# BUILTIN_DEFAULT_SEED_FALLBACK and BUILTIN_BCC workarounds.
+# Setting BUILTIN_BCC forces boot_params user programs to use builtin information
+# instead of relying on the reserved memory bootparams mappings.
 BUILTIN_BCC := true
+# Force the bootparams reserved memory mapping module to map a builtin
+# default seed when the device tree is missing.
+# This works around the missing device tree (b/473893047) on qemu-trusty-desktop.
+BUILTIN_DEFAULT_SEED_FALLBACK := true
 STORAGE_EXTERNAL_SUPER_BLOCK_MAC := trusty/user/desktop/lib/external_super_block_mac
 STORAGE_HAS_RPMB := false
 TI50_EMULATOR_PATH := $(abspath out/host/linux-x86/etc/ti50_emulator_x86_64/run.sh)

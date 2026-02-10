@@ -19,6 +19,7 @@ TRUSTY_BUILTIN_USER_TASKS := \
 	trusty/user/app/gatekeeper \
 	trusty/user/app/keymint/app \
 	trusty/user/app/keymint/vm/commservice/app \
+        trusty/user/app/secretkeeper/app \
 	trusty/user/app/storage \
 	trusty/user/base/app/system_state_server_static \
 	trusty/user/desktop/app/finger_guard/app \
@@ -55,5 +56,7 @@ TRUSTY_VM_INCLUDE_RKP_TA ?= true
 KEYMINT_LATE_PROVISIONING := true
 AVF_ENABLE_ADVANCE_MULTITENANCY := true
 AVF_VALIDATE_CLIENT_VM_USING_DICE_INFO := true
+# enable SecretKeeper tests
+SECRETKEEPER_ENABLED := true
 
 GATEKEEPER_MANIFEST := trusty/user/app/gatekeeper/manifest-desktop.json

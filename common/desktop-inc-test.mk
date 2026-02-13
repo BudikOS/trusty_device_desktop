@@ -19,7 +19,9 @@ include ../../common/desktop-inc.mk
 
 TRUSTY_RUST_USER_TESTS += \
 	trusty/user/app/keymint \
+	trusty/user/app/secretkeeper \
 	trusty/user/base/lib/pvmdice \
+	trusty/user/base/lib/storage/rust \
 	trusty/user/desktop/app/finger_guard/svc \
 	trusty/user/desktop/app/gsc_svc \
 	trusty/user/desktop/app/keymint_strongbox \

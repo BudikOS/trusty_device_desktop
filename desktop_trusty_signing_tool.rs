@@ -78,7 +78,7 @@ fn main() -> Result<()> {
     temp.write_all(bin).expect("Failed to write to temp file.");
     temp.flush().expect("Failed to flush temp file.");
 
-    let cmd = [
+    let mut cmd = vec![
         config.avbtool.to_str().unwrap(),
         "resign_image",
         "--image",
@@ -87,9 +87,11 @@ fn main() -> Result<()> {
         config.key.to_str().unwrap(),
         "--algorithm",
         &config.algorithm,
-        "--signing_helper_with_files",
-        &config.signing_helper_with_files,
     ];
+    if let Some(ref helper) = config.signing_helper_with_files {
+        cmd.push("--signing_helper_with_files");
+        cmd.push(helper);
+    }
     let out = run_command(&cmd).expect("Failed to run command.");
     println!("{}", out);
 
@@ -124,10 +126,6 @@ struct Config {
     #[clap(long, required = true, help = "The algorithm to use with key")]
     algorithm: String,
 
-    #[clap(
-        long("signing_helper_with_files"),
-        required = true,
-        help = "Signing helper script to use"
-    )]
-    signing_helper_with_files: String,
+    #[clap(long("signing_helper_with_files"), help = "Signing helper script to use")]
+    signing_helper_with_files: Option<String>,
 }
